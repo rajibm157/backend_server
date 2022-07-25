@@ -39,16 +39,16 @@
     "typescript": "^4.7.3"
   },
   "_moduleAliases": {
-    "_root": "./src",
-    "_config": "./src/config",
-    "_helpers": "./src/helpers",
-    "_errors": "./src/helpers/errors",
-    "_types": "./src/helpers/interfaces",
-    "_controllers": "./src/controllers",
-    "_middleware": "./src/middleware",
-    "_models": "./src/models",
-    "_routes": "./src/routes",
-    "_schemas": "./src/schemas",
-    "_services": "./src/services"
+    "_root": "./dist",
+    "_config": "./dist/config",
+    "_helpers": "./dist/helpers",
+    "_errors": "./dist/helpers/errors",
+    "_types": "./dist/helpers/interfaces",
+    "_controllers": "./dist/controllers",
+    "_middleware": "./dist/middleware",
+    "_models": "./dist/models",
+    "_routes": "./dist/routes",
+    "_schemas": "./dist/schemas",
+    "_services": "./dist/services"
   }
 }
