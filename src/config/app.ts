@@ -1,9 +1,9 @@
 import express, { Express, Request, Response } from 'express';
-//import 'express-async-errors';
+import 'express-async-errors';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
-//import xss from "xss-clean";
+import xss from "xss-clean";
 
 import routes from '_routes';
 import notFound from '_helpers/notFound';
@@ -16,7 +16,7 @@ const app: Express = express();
 
 //Middleware
 app.use(cors());
-//app.use(xss());
+app.use(xss());
 app.use(morgan('dev'));
 app.set("trust proxy", 1);
 
