@@ -3,7 +3,7 @@ import 'express-async-errors';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
-import xss from "xss-clean";
+import xss from 'xss-clean';
 
 import routes from '_routes';
 import notFound from '_helpers/notFound';
@@ -18,7 +18,7 @@ const app: Express = express();
 app.use(cors());
 app.use(xss());
 app.use(morgan('dev'));
-app.set("trust proxy", 1);
+app.set('trust proxy', 1);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
