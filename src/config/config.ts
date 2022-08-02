@@ -1,3 +1,7 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const mongo_uri = 'mongodb://localhost:27017/example';
 
 const config = {
@@ -6,7 +10,7 @@ const config = {
     mongo_uri: process.env.MONGO_URI || mongo_uri,
   },
   production: {
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3001,
     mongo_uri: process.env.MONGO_URI || mongo_uri,
   },
 };
