@@ -1,5 +1,4 @@
-import StatusCodes from 'http-status-codes';
-
+import { StatusCodes } from 'http-status-codes';
 import { CustomError } from './customError';
 
 export class Unauthenticated extends CustomError {

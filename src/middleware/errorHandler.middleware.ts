@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import StatusCodes from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 
 export const errorHandler = (err: any, _req: Request, res: Response) => {
   const customError = {
