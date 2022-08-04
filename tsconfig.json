@@ -32,7 +32,7 @@
     "paths": {
       "_config/*": ["config/*"],
       "_helpers/*": ["helpers/*"],
-      "_types/*": ["helpers/interfaces/*"],
+      "_types": ["helpers/interfaces"],
       "_errors": ["helpers/errors"],
       "_controllers": ["controllers"],
       "_middleware": ["middleware"],
