@@ -37,3 +37,12 @@ export const register = async (req: Request, res: Response) => {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message });
   }
 };
+
+export const profile = async (req: Request, res: Response) => {
+  try {
+    const data = await authService.findUser(res.locals.user?.id);
+    res.status(StatusCodes.OK).send({ user: data });
+  } catch (error: any) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message });
+  }
+};
