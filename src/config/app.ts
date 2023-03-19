@@ -7,7 +7,7 @@ import xss from 'xss-clean';
 import routes from '_routes';
 import notFound from '_helpers/notFound';
 
-import { errorHandler } from '_middleware';
+import { errorHandler, responseHandler } from '_middleware';
 
 const app: Express = express();
 
@@ -22,6 +22,8 @@ app.use(express.urlencoded({ extended: true }));
 
 //Routes
 app.get('/', (_: Request, res: Response) => res.send('Welcome to the api Server'));
+
+app.use(responseHandler); //Middleware for handling response
 
 app.use('/api/v1', routes);
 app.use(notFound); //Not Found API

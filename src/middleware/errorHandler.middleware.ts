@@ -28,5 +28,5 @@ export const errorHandler = (err: any, _req: Request, res: Response) => {
     customError.statusCode = StatusCodes.NOT_FOUND;
   }
 
-  return res.status(customError.statusCode).json({ error: customError.error });
+  return res.error({ status: customError.statusCode, errors: customError.error, message: customError.error?.message });
 };

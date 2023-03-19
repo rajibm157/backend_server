@@ -16,9 +16,9 @@ export const login = async (req: Request, res: Response) => {
 
     const token = await authService.createToken(user);
 
-    res.status(StatusCodes.OK).json({ user, token, message: 'You have successfully login.' });
+    res.success({ result: { user, token }, message: 'You have successfully login.' });
   } catch (error: any) {
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message });
+    res.error({ errors: error, message: error?.message });
   }
 };
 
@@ -32,17 +32,17 @@ export const register = async (req: Request, res: Response) => {
 
     const data = await authService.createUser({ ...rest, email, password: hashPassword });
 
-    res.status(StatusCodes.CREATED).send({ user: data, message: 'You have successfully register.' });
+    res.success({ status: StatusCodes.CREATED, result: { user: data }, message: 'You have successfully register.' });
   } catch (error: any) {
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message });
+    res.error({ errors: error, message: error?.message });
   }
 };
 
 export const profile = async (req: Request, res: Response) => {
   try {
-    const data = await authService.findUser(res.locals.user?.id);
-    res.status(StatusCodes.OK).send({ user: data });
+    const data = await authService.findUser(req.user?.userId as string);
+    res.success({ result: { user: data } });
   } catch (error: any) {
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message });
+    res.error({ errors: error, message: error?.message });
   }
 };
